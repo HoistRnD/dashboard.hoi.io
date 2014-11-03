@@ -6,7 +6,11 @@ var apiCall = new ApiCall();
 /* GET home page. */
 router.get('/', function(req, res) {
   apiCall.getRequest(function (results) {
-    res.render('index', { title: 'Dashboard', numEventsTriggered: results['numEventsTriggered'], numModulesExecuted: results['numModulesExecuted']});
+    if (results !== 'unauthorized') {
+      res.render('index', { title: 'Dashboard', numEventsTriggered: results['numEventsTriggered'], numModulesExecuted: results['numModulesExecuted']});
+    } else {
+      res.render('error', {error: {status: 401}})
+    }
   })
 });
 
