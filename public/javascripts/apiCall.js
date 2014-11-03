@@ -7,16 +7,14 @@ var ApiCall = function () {
 ApiCall.prototype = { 
   getRequest: function (callback) {
     request({json: true, uri: this.url}, function(error, response, body) {
-      if (!error && response.statusCode == 200 && response['headers']['server'] == 'nginx') {
-        console.log(response['headers']['server'])
+      if (!error && response.statusCode == 200) {
         var results = {
           numEventsTriggered: body['result'][0]['result'],
           numModulesExecuted: body['result'][1]['result']
         } 
-      } else if (response['headers']['server'] == 'nginx') {
-        var results = 'unauthorized'
-      }
-      callback(results);
+        callback(results);
+      } 
+      
     })
     
   }
