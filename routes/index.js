@@ -6,10 +6,10 @@ var apiCall = new ApiCall();
 /* GET home page. */
 router.get('/', function(req, res) {
   apiCall.getRequest(function (results) {
-    if (results !== 'unauthorized') {
+    if (req.ip == '116.90.139.105') {
       res.render('index', { title: 'Dashboard', numEventsTriggered: results['numEventsTriggered'], numModulesExecuted: results['numModulesExecuted']});
     } else {
-      res.render('error', {error: {status: 401}})
+      res.render('401')
     }
   })
 });
