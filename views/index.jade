@@ -1,9 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  - var currentDate = new Date();
-  h2 Current time: #{currentDate}
-  p Number of events triggered: #{numEventsTriggered}
-  p Number of modules executed: #{numModulesExecuted}
+ 
+  #container
+    p Number of events triggered:
+    p.number #{numEventsTriggered}
 
+
+   #container
+    p Number of modules executed:
+    p.number #{numModulesExecuted}
+
+
+   

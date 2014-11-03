@@ -6,3 +6,17 @@ body {
 a {
   color: #00B7FF;
 }
+
+.number {
+  font-size: 150px;
+  text-align: center;
+}
+
+#container {
+  font-size: 20px;
+  text-align: center;
+  float: left;
+  width: 40%;
+  border: 5px solid #11a691;
+  margin: 4%;
+}
