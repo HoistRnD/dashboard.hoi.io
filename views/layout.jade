@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript').
+      var reload = function () {
+        window.location.reload(true)
+      }
+      setInterval(reload, 5000)
+  body
+    block content
