@@ -12,11 +12,11 @@ ApiCall.prototype = {
         var results = {
           numEventsTriggered: body['result'][0]['result'],
           numModulesExecuted: body['result'][1]['result']
+        } 
       } else if (response['headers']['server'] == 'nginx') {
         var results = 'unauthorized'
       }
       callback(results);
-      }
     })
     
   }
