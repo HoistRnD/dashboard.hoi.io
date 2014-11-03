@@ -2,8 +2,21 @@
 var debug = require('debug')('dashboard');
 var app = require('../app');
 
-app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
+});
+
+
+process.on('message', function (msg) {
+  console.log('got message', msg, msg === 'shutdown');
+  if (msg === 'shutdown') {
+    console.log('closing connection');
+    setTimeout(function () {
+      console.log('shutting down git server');
+      server.close(function () {
+        process.exit(0);
+      });
+    }, 500);
+  }
 });

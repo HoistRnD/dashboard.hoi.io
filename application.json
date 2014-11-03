@@ -1,0 +1,14 @@
+[{
+  "name": "dashboard.hoi.io",
+  "script": "./bin/www",
+  "cwd": "./",
+  "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+  "error_file": "/var/log/node/dashboard.hoi.io.stderr.log",
+  "out_file": "/var/log/node/dashboard.hoi.io.stdout.log",
+  "instances": "1",
+  "merge_logs": true,
+  "exec_mode": "fork_mode",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}]

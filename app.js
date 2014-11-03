@@ -1,3 +1,4 @@
+var config = require('config')
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -55,6 +56,6 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
+app.set('port', config.get('Hoist.http.port'));
 
 module.exports = app;
