@@ -6,7 +6,7 @@ var apiCall = new ApiCall();
 /* GET home page. */
 router.get('/', function(req, res) {
   apiCall.getRequest(function (results) {
-    var ipAddress = req.headers['X-REAL-IP'] || req.ip;
+    var ipAddress = req.headers['X-Real-IP'] || req.ip;
     if (ipAddress === '116.90.139.105') {
       res.render('index', { title: 'Dashboard', numEventsTriggered: results['numEventsTriggered'], numModulesExecuted: results['numModulesExecuted']});
     } else {
