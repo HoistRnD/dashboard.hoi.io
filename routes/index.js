@@ -6,7 +6,7 @@ var apiCall = new ApiCall();
 /* GET home page. */
 router.get('/', function(req, res) {
   console.log('request headers:',req.headers);
-  var ipAddress = req.headers['X-Real-IP'] || req.ip;
+  var ipAddress = req.headers['x-real-ip'] || req.ip;
   if (ipAddress === '116.90.139.105') {
     apiCall.getRequest(function (results) {
     
